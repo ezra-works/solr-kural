@@ -1,0 +1,52 @@
+{
+  "add-field": [
+    {
+      "name": "kuralId",
+      "type": "plongs"
+    },
+    {
+      "name": "chapter",
+      "type": "plongs"
+    },
+    {
+      "name": "titleInTamil",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "titleInEnglish",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "kuralInTamil",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "kuralInTanglish",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "contentType",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "commentaries",
+      "type": "text_general"
+    },
+    {
+      "name": "comment",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "columnist",
+      "type": "text_general",
+      "multiValued": false
+    }
+  ],
+  "add-copy-field": [{ "source": "kuralIn*", "dest": "_text_" }]
+}

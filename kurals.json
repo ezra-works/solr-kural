@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "kuralId": 1,
+    "chapter": 1,
+    "titleInTamil": "கடவுள் வாழ்த்து",
+    "titleInEnglish": "The Praise of God",
+    "kuralInTamil": "அகர முதல எழுத்தெல்லாம் ஆதி '\n' பகவன் முதற்றே உலகு",
+    "kuralInTanglish": "agara muthala eluthelam aadhi bagavan muthatre ulagu",
+    "contentType": "kural",
+    "commentaries": [
+      {
+        "id": "2",
+        "contentType": "commentary",
+        "comment": "A, as its first of letters, every speech maintains; The Primal Deity is first through all the world’s domains",
+        "columnist": "G.U Pope"
+      },
+      {
+        "id": "3",
+        "contentType": "commentary",
+        "comment": "எழுத்துக்கள் எல்லாம் அகரத்தில் தொடங்குகின்றன; (அது போல) உலகம் கடவுளில் தொடங்குகிறது.",
+        "columnist": "Solomon Popeye"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "kuralId": 2,
+    "chapter": 1,
+    "titleInTamil": "கடவுள் வாழ்த்து",
+    "titleInEnglish": "The Praise of God",
+    "kuralInTamil": "கற்றதனால் ஆய பயனென்கொல் வாலறிவன் \n' நற்றாள் தொழாஅர் எனின்",
+    "kuralInTanglish": "kattrathinal aaya payanenkol valarivan '\n' nitral tholaar enin",
+    "contentType": "kural",
+    "commentaries": [
+      {
+        "id": "5",
+        "contentType": "commentary",
+        "comment": "What Profit have those derived from learning, who worship not the good feet of Him who is possessed of pure knowledge ?",
+        "columnist": "G.U Pope"
+      },
+      {
+        "id": "6",
+        "contentType": "commentary",
+        "comment": "தூய அறிவு வடிவானவனின் திருவடிகளை வணங்காதவர், படித்ததனால் பெற்ற பயன்தான் என்ன?.",
+        "columnist": "Solomon Popeye"
+      }
+    ]
+  }
+]
