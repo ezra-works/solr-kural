@@ -1,0 +1,26 @@
+[
+  {
+    "uuid": "a27b0ca4-8fa3-426e-b051-c495d82d479e",
+    "kuralNumber": 1,
+    "kuralInTamil": "அகர முதல எழுத்தெல்லாம் ஆதி \nபகவன் முதற்றே உலகு",
+    "kuralInTanglish": "agara muthala eluthelam aadhi\nbagavan muthatre ulagu",
+    "titleInTamil": "கடவுள் வாழ்த்து",
+    "titleInEnglish": "The Praise of God"
+  },
+  {
+    "uuid": "f3a13e99-62e0-4dc8-b4a3-e1c2dc127439",
+    "kuralNumber": 1,
+    "comment": "A, as its first of letters, every speech maintains; The Primal Deity is first through all the world’s domains",
+    "kuralScholar": {
+      "name": "G.U Pope"
+    }
+  },
+  {
+    "uuid": "99487310-d560-4bdc-8524-b7cbf7d9fbde",
+    "kuralNumber": 1,
+    "comment": "எழுத்துக்கள் எல்லாம் அகரத்தில் தொடங்குகின்றன; (அது போல) உலகம் கடவுளில் தொடங்குகிறது",
+    "kuralScholar": {
+      "name": "Solomon Papaya"
+    }
+  }
+]
