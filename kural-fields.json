@@ -1,11 +1,7 @@
 {
   "add-field": [
     {
-      "name": "kuralId",
-      "type": "plongs"
-    },
-    {
-      "name": "chapter",
+      "name": "kuralNumber",
       "type": "plongs"
     },
     {
@@ -29,7 +25,7 @@
       "multiValued": false
     },
     {
-      "name": "contentType",
+      "name": "name",
       "type": "text_general",
       "multiValued": false
     },
@@ -44,6 +40,11 @@
     },
     {
       "name": "columnist",
+      "type": "text_general",
+      "multiValued": false
+    },
+    {
+      "name": "kuralScholar",
       "type": "text_general",
       "multiValued": false
     }

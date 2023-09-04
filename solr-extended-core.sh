@@ -26,9 +26,10 @@ fi
 /opt/solr/docker/scripts/init-var-solr
 source /opt/solr/docker/scripts/run-initdb
 
-coresdir=/var/solr/data
+solrdata=/var/solr/data
 CORE=${CORE_NAME}
-CORE_DIR="$coresdir/${CORE}"
+CORE_DIR="$solrdata/${CORE}"
+CORE_CONF_DIR="${CORE_DIR}/conf"
 CORE_SCHEMA_URL="http://localhost:8983/solr/${CORE}/schema?commit=true"
 CORE_UPDATE_URL="http://localhost:8983/solr/${CORE}/update?commit=true"
 
@@ -49,7 +50,7 @@ else
   
   echo "creating ${CORE}'s schema fields"
   curl -X POST -H 'Content-type:application/json' -d @"${CORE_FIELDS}" ${CORE_SCHEMA_URL}
-  
+
   echo "indexing ${CORE_SAMPLE_DATA}"
   # ! THIS IS FLATENNING THE ARRAYS commentaries.id, commentaries.comment, Use the JSON post instead
   #/opt/solr/bin/post -c $CORE -commit yes ${CORE_SAMPLE_DATA}
