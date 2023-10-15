@@ -2,7 +2,8 @@
   "add-field": [
     {
       "name": "kuralNumber",
-      "type": "plongs"
+      "type": "plongs",
+      "multiValued": false
     },
     {
       "name": "titleInTamil",
@@ -30,7 +31,7 @@
       "multiValued": false
     },
     {
-      "name": "commentaries",
+      "name": "contentType",
       "type": "text_general"
     },
     {
@@ -44,8 +45,8 @@
       "multiValued": false
     },
     {
-      "name": "kuralScholar",
-      "type": "text_general",
+      "name": "scholar",
+      "type": "string",
       "multiValued": false
     }
   ],

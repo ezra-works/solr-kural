@@ -1,6 +1,7 @@
 [
   {
     "uuid": "a27b0ca4-8fa3-426e-b051-c495d82d479e",
+    "contentType": "kural",
     "kuralNumber": 1,
     "kuralInTamil": "அகர முதல எழுத்தெல்லாம் ஆதி \nபகவன் முதற்றே உலகு",
     "kuralInTanglish": "agara muthala eluthelam aadhi\nbagavan muthatre ulagu",
@@ -8,19 +9,40 @@
     "titleInEnglish": "The Praise of God"
   },
   {
+    "uuid": "6889c597-3290-4ee4-98f4-316b3d7a4d8f",
+    "contentType": "kural",
+    "kuralNumber": 2,
+    "kuralInTamil": "கற்றதனால் ஆய பயனென்கொல் வாலறிவன் நற்றாள் தொழாஅர் எனின்",
+    "kuralInTanglish": "kattrathinal aaya payanenkol valarivan natral tholaar enin",
+    "titleInTamil": "கடவுள் வாழ்த்து",
+    "titleInEnglish": "The Praise of God"
+  },
+  {
     "uuid": "f3a13e99-62e0-4dc8-b4a3-e1c2dc127439",
     "kuralNumber": 1,
     "comment": "A, as its first of letters, every speech maintains; The Primal Deity is first through all the world’s domains",
-    "kuralScholar": {
-      "name": "G.U Pope"
-    }
+    "scholar": "G.U. Pope",
+    "contentType": "commentary"
   },
   {
     "uuid": "99487310-d560-4bdc-8524-b7cbf7d9fbde",
     "kuralNumber": 1,
     "comment": "எழுத்துக்கள் எல்லாம் அகரத்தில் தொடங்குகின்றன; (அது போல) உலகம் கடவுளில் தொடங்குகிறது",
-    "kuralScholar": {
-      "name": "Solomon Papaya"
-    }
+    "scholar": "Solomon Pappaya",
+    "contentType": "commentary"
+  },
+  {
+    "uuid": "28444d62-5d16-41d6-99a9-93ed9bc97a49",
+    "kuralNumber": 2,
+    "comment": "What Profit have those derived from learning, who worship not the good feet of Him who is possessed of pure knowledge ?",
+    "scholar": "G.U. Pope",
+    "contentType": "commentary"
+  },
+  {
+    "uuid": "b8ee265c-414b-479f-a5a9-30d696ad4728",
+    "kuralNumber": 2,
+    "comment": "தூய அறிவு வடிவானவனின் திருவடிகளை வணங்காதவர், படித்ததனால் பெற்ற பயன்தான் என்ன?",
+    "scholar": "Solomon Pappaya",
+    "contentType": "commentary"
   }
 ]

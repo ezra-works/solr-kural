@@ -1,4 +1,5 @@
 version: "3"
+name: solr-kural
 services:
   solr:
     image: solr
