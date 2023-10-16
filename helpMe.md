@@ -42,3 +42,5 @@
 - docker volume rm solr-on-cloud_data
 - docker exec -it solr-on-cloud-solr-1 bash
 - docker cp solr-on-cloud-solr-1:/var/solr/data/gettingstarted/conf/managed-schema.xml $(pwd)
+
+adding new commit
