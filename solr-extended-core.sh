@@ -15,49 +15,61 @@
 # limitations under the License.
 
 # Configure a Solr ${CORE} and then run solr in the foreground
-
 set -euo pipefail
+clear;
+printf "\n---------------------- running $0 ----------------------\n"
+printf "\n\n"
 
 if [[ "${VERBOSE:-}" == "yes" ]]; then
     set -x
 fi
 
 # Could set env-variables for solr-fg
-/opt/solr/docker/scripts/init-var-solr
-source /opt/solr/docker/scripts/run-initdb
+init-var-solr
+source run-initdb
 
-solrdata=/var/solr/data
-CORE=${CORE_NAME}
-CORE_DIR="$solrdata/${CORE}"
-CORE_CONF_DIR="${CORE_DIR}/conf"
-CORE_SCHEMA_URL="http://localhost:8983/solr/${CORE}/schema?commit=true"
-CORE_UPDATE_URL="http://localhost:8983/solr/${CORE}/update?commit=true"
+CORE_API="http://localhost:${SOLR_PORT}/solr/#/${CORE}/core-overview"
+CORE_SCHEMA_URL="http://localhost:${SOLR_PORT}/solr/${CORE}/schema?commit=true"
+CORE_UPDATE_URL="http://localhost:${SOLR_PORT}/solr/${CORE}/update?commit=true"
 
-echo "read from env CORE=$CORE, CORE_DIR=$CORE_DIR, CORE_SCHEMA=$CORE_FIELDS, CORE_SAMPLE_DATA=$CORE_SAMPLE_DATA"
+printf "read from environment_variables \n 
+  CORE=$CORE \n 
+  CORE_DIR=$CORE_DIR \n 
+  CORE_SCHEMA=$CORE_FIELDS \n 
+  CORE_SAMPLE_DATA=$CORE_SAMPLE_DATA \n
+  CORE_SCHEMA_URL=$CORE_SCHEMA_URL \n
+  CORE_UPDATE_URL=$CORE_UPDATE_URL \n"
+printf "\n"
 
-if [ -d "$CORE_DIR" ]; then
-  echo "$CORE_DIR exists; skipping ${CORE} creation"
+if [ -d $CORE_DIR ]; then
+  echo "$CORE exists; skipping ${CORE} creation"
 else
+  echo "CORE $CORE DOES NOT EXISTS, we should create it now"
   start-local-solr
-  echo "Creating $CORE"
+
+  echo "creating CORE $CORE"
   /opt/solr/bin/solr create -c "$CORE"
-  echo "Created $CORE"
-  echo "Loading example data"
+  printf "CORE ${CORE} created successfully \n"
+  
   post_args=()
   if [[ -n "${SOLR_PORT:-}" ]]; then
     post_args+=(-p "$SOLR_PORT")
   fi
   
-  echo "creating ${CORE}'s schema fields"
+  echo "creating ${CORE_FIELDS} schema fields"
   curl -X POST -H 'Content-type:application/json' -d @"${CORE_FIELDS}" ${CORE_SCHEMA_URL}
+  printf "\n"
+  printf "CORE ${CORE} schema fields created successfully \n"
 
-  echo "indexing ${CORE_SAMPLE_DATA}"
+  echo "indexing CORE_SAMPLE_DATA ${CORE_SAMPLE_DATA}"
   # ! THIS IS FLATENNING THE ARRAYS commentaries.id, commentaries.comment, Use the JSON post instead
   #/opt/solr/bin/post -c $CORE -commit yes ${CORE_SAMPLE_DATA}
   curl -X POST -H 'Content-type:application/json' -d @"${CORE_SAMPLE_DATA}" ${CORE_UPDATE_URL}
+  printf "\n"
+  printf "CORE ${CORE} CORE_SAMPLE_DATA created successfully \n"
   
-  echo "Loaded example data"
   stop-local-solr
+  # solr stop -p $SOLR_PORT
 
     # check the core_dir exists; otherwise the detecting above will fail after stop/start
     if [ ! -d "$CORE_DIR" ]; then
