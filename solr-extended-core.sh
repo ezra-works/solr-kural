@@ -16,7 +16,6 @@
 
 # Configure a Solr ${CORE} and then run solr in the foreground
 set -euo pipefail
-clear;
 printf "\n---------------------- running $0 ----------------------\n"
 printf "\n\n"
 
@@ -68,14 +67,21 @@ else
   printf "\n"
   printf "CORE ${CORE} CORE_SAMPLE_DATA created successfully \n"
   
-  stop-local-solr
-  # solr stop -p $SOLR_PORT
+  if [ $SOLR_PORT -gt 1024 ]; then
+    stop-local-solr
+    # solr stop -p $SOLR_PORT
+  else
+    printf "force stopping SOLR on port $SOLR_PORT \n"
+    pgrep -f java | xargs kill -9
+    sleep 10
+    echo "pgrep -f java $(pgrep -f java)" 
+  fi
 
-    # check the core_dir exists; otherwise the detecting above will fail after stop/start
-    if [ ! -d "$CORE_DIR" ]; then
-        echo "Missing $CORE_DIR"
-        exit 1
-    fi
+  # check the core_dir exists; otherwise the detecting above will fail after stop/start
+  if [ ! -d "$CORE_DIR" ]; then
+    echo "Missing $CORE_DIR"
+    exit 1
+  fi
 fi
 
 exec solr-fg

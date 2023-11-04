@@ -26,8 +26,8 @@ ARG CORE="thirukural"
 ARG CORE_DIR="/var/solr/data/$CORE"
 ARG CORE_FIELDS="/opt/solr/$CORE/solr-kural-fields.json"
 ARG CORE_SAMPLE_DATA="/opt/solr/$CORE/strapi-kural-sample.json"
-ARG SOLR_PORT=80
-# ARG SOLR_PORT=8983
+# ARG SOLR_PORT=80
+ARG SOLR_PORT=8983
 
 
 # Override the default solr download location with a preferred mirror, e.g.:
@@ -130,6 +130,7 @@ RUN set -ex; \
   chmod 0664 /etc/default/solr.in.sh; \
   mkdir -p -m0770 /var/solr; \
   chown -R "$SOLR_USER:0" /var/solr; \
+  ulimit -n 15000; \
   test ! -e /opt/solr/modules || ln -s /opt/solr/modules /opt/solr/contrib; \
   test ! -e /opt/solr/prometheus-exporter || ln -s /opt/solr/prometheus-exporter /opt/solr/modules/prometheus-exporter;
 
@@ -137,6 +138,7 @@ RUN set -ex; \
     apt-get update; \
     apt-get -y --no-install-recommends install acl lsof procps wget netcat gosu tini jattach; \
     rm -rf /var/lib/apt/lists/*;
+
 
 VOLUME /var/solr
 EXPOSE $SOLR_PORT
